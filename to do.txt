@@ -1,0 +1,46 @@
+1. node.JS installieren
+2. durch npm (node package manager) -> socket library installieren -> node static installieren (liefert HTML, CSS and JS files der App)
+3. socket.io konfigurieren
+4. CLEAR CANVAS BUG - fixed
+5. Hilfslinien BUG - fixed
+6. Lineal BUG - fixed
+7. FARBEN Auswahl buggy
+8. Radiergummi wird bei Clients nicht erkannt.
+9. Chat Namen BUG
+10.
+
+
+Whiteboard Paint
+- Mehrere Clients
+- JS
+- NodeJS mit Websockets
+
+- Implementierung von Räumen
+-- Benutzer können selber den Raum erstellen, beitreten und wieder austreten
+
+Grundfunktionen
+- Pinsen (Größe, Farbe, Form)
+- Radiergummy
+- Formen (Sind nachträglich veränderbar (Verschiebung und Skallierung):
+-- Rechteck
+-- Kreis
+
+
+Optional:
+Chat zwischen den Teilnehmern
+Passwörter für die Räume
+
+
+
+
+
+Dokumentation:
+
+1. server einrichten
+2. sockets einrichten
+3. server starten, file server
+4. zeichnen
+
+
+nachricht an server senden
+server sendet nachricht an alle clients

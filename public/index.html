@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>INF 2</title>
+  <meta name="description" content="content beschreibung">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- Hintergrund-Divs fuer tab bar, die die raeume angibt, teil des lineal-codes via codepen examples-->
+  <div class="fullscreen">
+    <div class="menue-werkzeug-bar">
+      <div class="tab"><span>Lobby</span></div>
+      <div class="tab"><span>Raum 1</span></div>
+      <div class="tab">
+        <span>PINSEL </span>
+        <button id="kleinerPinsel">klein </button>
+        <button id="normalerPinsel">normal </button>
+        <button id="breiterPinsel">groß </button>
+      </div>
+      <div class="tab">
+        <span>RADIERGUMMI</span>
+        <button id="radiergummi">AN </button>
+        <button id="reset">RESET </button>
+      </div>
+      <div class="tab">
+        <span>LINEAL</span>
+        <button id="lineal-on">An </button>
+        <button id="lineal-off">Aus </button>
+      </div>
+      <div class="tab">
+        <span>HILFSLINIEN</span>
+        <button id="hilfslinie-on">An </button>
+        <button id="hilfslinie-off">Aus </button>
+      </div>
+      <div class="tab">
+        <span>FARBEN</span>
+        <button id="schwarz">Schwarz </button>
+        <button id="rot">Rot </button>
+        <button id="blau">Blau </button>
+        <button id="gruen">Grün </button>
+      </div>
+      <div class="tab"><span>FORMEN</span></div>
+      <div class="tab">
+        <span>Chat Name:</span>
+        <input id="nameinput" type="text" name="username">
+        <input type="submit">
+      </div>
+      <div id="aktiveNutzer" class="tab"><span>Aktive Nutzer: 0</span></div>
+    </div>
+
+    <div id="lineal-h" class="lineal h">
+      <ul class="striche">
+        <li>1000</li>
+        <li>900</li>
+        <li>800</li>
+        <li>700</li>
+        <li>600</li>
+        <li>500</li>
+        <li>400</li>
+        <li>300</li>
+        <li>200</li>
+        <li>100</li>
+        <li>0</li>
+        <li>100</li>
+        <li>200</li>
+        <li>300</li>
+        <li>400</li>
+        <li>500</li>
+        <li>600</li>
+        <li>700</li>
+        <li>800</li>
+        <li>900</li>
+        <li>1000</li>
+        <li>1100</li>
+        <li>1200</li>
+        <li>1300</li>
+        <li>1400</li>
+        <li>1500</li>
+        <li>1600</li>
+        <li>1700</li>
+        <li>1800</li>
+        <li>1900</li>
+        <li>2000</li>
+        <li>2100</li>
+        <li>2200</li>
+        <li>2300</li>
+        <li>2400</li>
+        <li>2500</li>
+        <li>2600</li>
+        <li>2700</li>
+        <li>2800</li>
+        <li>2900</li>
+        <li>3000</li>
+        <li>3100</li>
+        <li>3200</li>
+        <li>3300</li>
+        <li>3400</li>
+        <li>3500</li>
+        <li>3600</li>
+        <li>3700</li>
+        <li>3800</li>
+        <li>3900</li>
+        <li>4000</li>
+      </ul>
+      <input id="horizontale-hilfslinie" type="range" min="1" max="100"/>
+    </div>
+    <div id="lineal-v" class="lineal v">
+      <ul class="striche">
+        <li>1000</li>
+        <li>900</li>
+        <li>800</li>
+        <li>700</li>
+        <li>600</li>
+        <li>500</li>
+        <li>400</li>
+        <li>300</li>
+        <li>200</li>
+        <li>100</li>
+        <li>0</li>
+        <li>100</li>
+        <li>200</li>
+        <li>300</li>
+        <li>400</li>
+        <li>500</li>
+        <li>600</li>
+        <li>700</li>
+        <li>800</li>
+        <li>900</li>
+        <li>1000</li>
+        <li>1100</li>
+        <li>1200</li>
+        <li>1300</li>
+        <li>1400</li>
+        <li>1500</li>
+        <li>1600</li>
+        <li>1700</li>
+        <li>1800</li>
+        <li>1900</li>
+        <li>2000</li>
+        <li>2100</li>
+        <li>2200</li>
+        <li>2300</li>
+        <li>2400</li>
+        <li>2500</li>
+        <li>2600</li>
+        <li>2700</li>
+        <li>2800</li>
+        <li>2900</li>
+        <li>3000</li>
+        <li>3100</li>
+        <li>3200</li>
+        <li>3300</li>
+        <li>3400</li>
+        <li>3500</li>
+        <li>3600</li>
+        <li>3700</li>
+        <li>3800</li>
+        <li>3900</li>
+        <li>4000</li>
+      </ul>
+      <input id="vertikale-hilfslinie" type="range" min="1" max="100"/>
+    </div>
+
+    <div id="anleitung">
+      <div class="erklaerung"><h2>Hallo.</h2><br><br>Klicke einfach irgendwo um zu starten.<br><br>Das Fenster kann durch einen Klick auf "RESET" zurückgesetzt werden.<br>Die Änderungen erscheinen bei allen Teilnehmern in Echtzeit.<br><br>Um neu zu starten, klicke einfach auf "RESET" oder lade das Fenster neu.</div>
+    </div>
+
+    <div id="zeiger">
+      <!-- Zeiger werden hier angezeigt -->
+    </div>
+    <!-- To Do: responsive / resize-->
+    <canvas id="zeichenflaeche" width="1920px" height="1080px">
+      Canvas wird benoetigt!
+    </canvas>
+</div>
+
+<!-- WERKZEUGE
+<div id="werkzeuge">
+<h2>Test</h2>
+<button>dicker strich</button>
+</div>-->
+
+
+<!--  Chat Footer -->
+<footer>
+  <h2>Chat!</h2>
+  <ul id="nachrichten"></ul>
+  <form action="">
+    <input id="n" autocomplete="off" /><button>Senden</button>
+  </form>
+</footer>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/zeichnen.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
