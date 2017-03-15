@@ -30,6 +30,15 @@ io.on('connection', function(socket){
 
 // bei nachricht wird die chat nachricht des emit befehls aus chat.js empfangen und in die server console geposted
 io.on('connection', function(socket){
+  socket.on('raum', function(room){
+      if(socket.room)
+          socket.leave(socket.room);
+
+      socket.room = room;
+      socket.join(room);
+  });
+    // standard = lobby, alternative raum1
+
   socket.on('chat nachricht', function(msg){
     console.log('nachricht: ' + msg);
     io.emit('chat nachricht', msg);

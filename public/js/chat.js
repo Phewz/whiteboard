@@ -10,6 +10,12 @@ $(function () {
   var datum = new Date();
   var timestamp = datum.toString();
   var name = "name";
+  var room = "lobby";
+
+  // Raum joinen
+  socket.on('connect', function() {
+   socket.emit('raum', room);
+  });
 
   // Namen durch eingabe importieren, to-do/bugfix: an server senden und clients syncen
   $('nameinput').submit(function(){
