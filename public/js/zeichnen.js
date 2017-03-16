@@ -192,7 +192,12 @@ $(function(){
   function radierGummi(){
     ctx.strokeStyle = weisseFarbe;
     ctx.beginPath();
+    socket.emit('radierGummi', data);
   }
+  socket.on('radierGummi', function(){
+    ctx.strokeStyle = weisseFarbe;
+    ctx.beginPath();
+  });
 
   // schwarz
   document.getElementById ("schwarz").addEventListener ("click", schwarzeFarbe);

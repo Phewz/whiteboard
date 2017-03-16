@@ -7,7 +7,7 @@
 7. FARBEN Auswahl buggy
 8. Radiergummi wird bei Clients nicht erkannt.
 9. Chat Namen BUG
-10.
+10. Räume BUG
 
 
 Whiteboard Paint

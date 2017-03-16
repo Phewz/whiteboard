@@ -6,7 +6,7 @@ SERVER SEITE.. buggy.. mit etwas Hilfe von P. Hilgenstock
 --------------------------------------*/
 
 io.on('connection', function(socket) {
-		
+
 	socket.on('raumerstellen', raumErstellen)
 
 
@@ -21,7 +21,7 @@ io.on('connection', function(socket) {
 		}
 
 	}
-	
+
 	socket.emit('rooms', rooms) //information aller bestehenden räume an clients senden
 
 	function isValidRoomName(name) {
@@ -31,12 +31,12 @@ io.on('connection', function(socket) {
 })
 
 function raumErsteller(name) {
-	
+
 	var room = io.of('/rooms/'+name)
-	
+
 	var roommember /*string[]*/ = [];
 	room.on('connection' function(socket) {
-		
+
 		socket.on('authenticate', onAuthenticate);
 		var name
 		function onAuthenticate(data) {
@@ -48,7 +48,7 @@ function raumErsteller(name) {
 			socket.on('disconnect', onDisconnect)
 			socket.on('message', handleMessage)
 		})
-		
+
 		function onDisconnect() {
 			//name wird immer einen WErt haben, da der user schon einmal authentifiziert wurde wenn diese funktion ausgeführt wird
 			roommember.splice(roommember.indexOf(name),1 ) //client von liste entfernen
@@ -58,6 +58,6 @@ function raumErsteller(name) {
 		}
 		socket.broadcast.emit('clientdisconnected', name)
 	})
-	
-	
+
+
 }

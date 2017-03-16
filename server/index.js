@@ -66,7 +66,7 @@ io.sockets.on('connection', function (socket) {
 // Pinselbreite, BUG: Änderung der Breite bei Client A ändert auch Breite bei B
 // Wenn Pinsel von small auf big geändert wird, verändert sich alles bisher gezeichnete..
 
-io.on('connection', function(socket, lineWidth){
+io.on('connection', function(socket, lineWidth, strokeStyle){
   socket.on('kleinerPinsel', function(){
     console.log('pinsel: ' + lineWidth);
     io.emit('kleinerPinsel');
@@ -78,5 +78,9 @@ io.on('connection', function(socket, lineWidth){
   socket.on('breiterPinsel', function(){
     console.log('pinsel: ' + lineWidth);
     io.emit('breiterPinsel');
+  });
+  socket.on('radierGummi', function(){
+    console.log('radiergummi');
+    io.emit('radierGummi');
   });
 });
